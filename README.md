@@ -25,22 +25,52 @@ and uses local models (Ollama, Vosk, Piper) when offline — so you always get a
 
 ## 📂 Project Structure
 
-'''
 noir/
-├─ server/                  # FastAPI backend
-│  ├─ main.py
-│  ├─ config.py
-│  ├─ routes/               # API endpoints
-│  ├─ services/             # STT, TTS, LLM integrations
-│  └─ utils/                 # Helpers & model selection
+├─ server/
+│  ├─ __init__.py
+│  ├─ main.py               # FastAPI entry point
+│  ├─ config.py             # API keys, settings
+│  ├─ routes/
+│  │   ├─ __init__.py
+│  │   ├─ assist.py         # /v1/assist (chat logic)
+│  │   ├─ stt.py            # /v1/stt (speech to text)
+│  │   ├─ tts.py            # /v1/tts (text to speech)
+│  ├─ services/
+│  │   ├─ __init__.py
+│  │   ├─ openai_api.py     # Calls to OpenAI
+│  │   ├─ perplexity_api.py # Calls to Perplexity
+│  │   ├─ offline_llm.py    # Local LLM (Ollama, llama.cpp, etc.)
+│  │   ├─ vosk_stt.py       # Offline STT
+│  │   ├─ whisper_stt.py    # OpenAI Whisper API
+│  │   ├─ piper_tts.py      # Offline TTS
+│  │   ├─ edge_tts.py       # Cloud TTS fallback
+│  └─ utils/
+│      ├─ audio.py          # Audio processing helpers
+│      ├─ model_selector.py # Picks model based on mode (online/offline)
+│
 ├─ client/
-│  ├─ desktop/               # PySide6 GUI
-│  └─ android/               # Kivy/KivyMD app
-├─ tests/                    # Unit tests
+│  ├─ desktop/              # PySide6 GUI app
+│  │   ├─ main.py
+│  │   ├─ ui_main.py
+│  │   ├─ recorder.py
+│  │   ├─ player.py
+│  │   ├─ api_client.py
+│  │
+│  ├─ android/              # Kivy/KivyMD mobile app
+│  │   ├─ main.py
+│  │   ├─ recorder.py
+│  │   ├─ player.py
+│  │   ├─ api_client.py
+│
+├─ tests/
+│  ├─ test_assist.py
+│  ├─ test_stt.py
+│  ├─ test_tts.py
+│
 ├─ requirements.txt
+├─ README.md
 ├─ .env.example
-└─ README.md
-'''
+└─ run.sh
 
 ## ⚙️ Requirements
 
