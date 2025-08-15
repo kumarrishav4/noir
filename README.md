@@ -25,7 +25,7 @@ and uses local models (Ollama, Vosk, Piper) when offline — so you always get a
 
 ## 📂 Project Structure
 
-
+'''
 noir/
 ├─ server/                  # FastAPI backend
 │  ├─ main.py
@@ -40,8 +40,7 @@ noir/
 ├─ requirements.txt
 ├─ .env.example
 └─ README.md
-
-
+'''
 
 ## ⚙️ Requirements
 
