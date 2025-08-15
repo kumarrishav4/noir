@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Python cache & build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE/project settings
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs & temp files
+*.log
+*.tmp
+*.bak
+
+# Environment variables
+.env
+.env.*
