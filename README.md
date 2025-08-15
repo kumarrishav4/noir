@@ -24,7 +24,7 @@ and uses local models (Ollama, Vosk, Piper) when offline — so you always get a
 ---
 
 ## 📂 Project Structure
----
+```bash
 noir/
 ├─ server/
 │  ├─ __init__.py
@@ -71,7 +71,7 @@ noir/
 ├─ README.md
 ├─ .env.example
 └─ run.sh
----
+```
 ## ⚙️ Requirements
 
 ### System Dependencies
